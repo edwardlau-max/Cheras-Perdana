@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CP Pool Dosing Guide (Rev 1.4)</title>
+<title>CP Pool Dosing Guide (Rev 2.0)</title>
 <style>
   :root{
     --ink:#1a2230; --muted:#5b6675; --line:#d3d9e2; --bg:#f5f7fa;
     --fc-bg:#22303f; --fc-ink:#ffffff;
-    --d1:#eef4ff; --d1hd:#2b62b8;   /* Mon-Thurs / Weekday (blue) */
-    --d2:#fff3e6; --d2hd:#c8781a;   /* Fri-Sat / Weekend (orange) */
+    --d1:#eef4ff; --d1hd:#2b62b8;   /* Mon-Thurs / Mon-Fri (blue) */
+    --d2:#fff3e6; --d2hd:#c8781a;   /* Fri-Sat / Sat-Sun (orange) */
     --d3:#f1ecfb; --d3hd:#6b46c1;   /* Sunday (purple) */
     --on2bg:#cdedd9; --on2:#12703f;  /* SC ON */
     --offbg:#fbe1da; --off:#b3341f;  /* SC OFF */
@@ -130,13 +130,13 @@
   <header>
     <h1>CP Pool — Chlorine &amp; pH Dosing Guide</h1>
     <p class="sub">Water test → find your FC reading → read the column for today. SC = Salt Chlorinator.</p>
-    <span class="rev">REV 1.4</span>
+    <span class="rev">REV 2.0</span>
   </header>
 
   <div class="how">
-    <div class="step"><div class="num">1</div><div><b>Check the time</b><span>Morning test (11am / 9am) or after-class test (5pm).</span></div></div>
+    <div class="step"><div class="num">1</div><div><b>Check the time</b><span>Morning test (9am) or after-class test (5pm).</span></div></div>
     <div class="step"><div class="num">2</div><div><b>Find the FC row</b><span>Match your measured FC (dark left column).</span></div></div>
-    <div class="step"><div class="num">3</div><div><b>Read today's column</b><span>A dose (e.g. 500g) = add chlorine. Watch the SC state — Sunday keeps it ON.</span></div></div>
+    <div class="step"><div class="num">3</div><div><b>Read today's column</b><span>A dose (e.g. 500g) = add chlorine. All after-class dosing is done with the chlorinator OFF.</span></div></div>
   </div>
 
   <!-- AFTER CLASS -->
@@ -144,12 +144,12 @@
     <div class="band">
       <span class="tag a">After Class</span>
       <h2>5pm Water Test — Chlorine Dose</h2>
-      <span class="note">Mon–Sat: chlorinator OFF while dosing · <b style="color:var(--d3hd)">Sunday: chlorinator stays ON</b></span>
+      <span class="note">All after-class dosing = Salt Chlorinator OFF</span>
     </div>
     <div class="grids">
       <div class="wrap">
         <table>
-          <thead><tr><th class="fc">FC</th><th class="c1">Mon – Thurs</th><th class="c2">Fri – Sat</th><th class="c3">Sunday<small>SC ON</small></th></tr></thead>
+          <thead><tr><th class="fc">FC</th><th class="c1">Mon – Thurs</th><th class="c2">Fri – Sat</th><th class="c3">Sunday</th></tr></thead>
           <tbody id="after"></tbody>
         </table>
       </div>
@@ -167,12 +167,12 @@
     <div class="band">
       <span class="tag m">Morning</span>
       <h2>Morning Water Test — Salt Chlorinator</h2>
-      <span class="note">11am / 9am · +4h = switch on 4 hours later · decision only</span>
+      <span class="note">9am · +4h = switch on 4 hours later · decision only, no CL</span>
     </div>
     <div class="grids">
       <div class="wrap narrow">
         <table>
-          <thead><tr><th class="fc">FC</th><th class="c1">Weekday</th><th class="c2">Weekend</th></tr></thead>
+          <thead><tr><th class="fc">FC</th><th class="c1">Mon – Fri</th><th class="c2">Sat – Sun</th></tr></thead>
           <tbody id="morn"></tbody>
         </table>
       </div>
@@ -193,7 +193,7 @@
           <li><b>Level 1 or 2:</b> clear the debris directly and isolate from pool.</li>
           <li><b>Level 3 only:</b> evacuate the pool.</li>
           <li>Clear the debris with vacuum and net ASAP.</li>
-          <li>Dose <b>200g CL</b> after clearing all debris.</li>
+          <li>Dose <b>100g CL</b> after clearing all debris.</li>
           <li>Cancel class for 30 mins after dosing for pool buffer, then start class after that.</li>
         </ol>
       </div>
@@ -213,32 +213,32 @@
   <footer>
     <div class="legend">
       <span><i class="sw" style="background:var(--on2bg)"></i> SC ON</span>
-      <span><i class="sw" style="background:var(--waitbg)"></i> SC ON after 4h (weekday)</span>
+      <span><i class="sw" style="background:var(--waitbg)"></i> SC ON after 4h (Sat–Sun)</span>
       <span><i class="sw" style="background:var(--offbg)"></i> SC OFF</span>
-      <span><i class="sw" style="background:var(--d1)"></i> Mon–Thu / Weekday</span>
-      <span><i class="sw" style="background:var(--d2)"></i> Fri–Sat / Weekend</span>
+      <span><i class="sw" style="background:var(--d1)"></i> Mon–Thu / Mon–Fri</span>
+      <span><i class="sw" style="background:var(--d2)"></i> Fri–Sat / Sat–Sun</span>
       <span><i class="sw" style="background:var(--d3)"></i> Sunday</span>
     </div>
-    Source: CP (Rev 1.4), "Dosing w Twice Test" tab. pH below 7.5 = no dosing. Sunday doses with the chlorinator ON. Confirm values against your master sheet before printing.
+    Source: CP tab (Rev 2.0), "CL Dosing Formula" master sheet. After-class CL dosing = Salt Chlorinator OFF. pH below 7.5 = no dosing. Fri–Sat dose for FC 0–0.8 raised from 900g to 1kg. Confirm values against your master sheet before printing.
   </footer>
 </div>
 
 <script>
   const after = [
-    ["0.0","500g","850g","1.5kg"],["0.2","500g","850g","1.5kg"],["0.4","500g","850g","1.5kg"],
-    ["0.6","500g","750g","1.5kg"],["0.8","500g","750g","1.5kg"],["1.0","500g","750g","1.5kg"],
-    ["1.2","500g","600g","1.2kg"],["1.4","400g","600g","1.2kg"],["1.6","400g","600g","1.2kg"],
-    ["1.8","400g","600g","1.2kg"],["2.0","200g","600g","1.2kg"],["2.2","200g","400g","800g"],
-    ["2.4","200g","400g","800g"],["2.6","100g","300g","800g"],["2.8","100g","300g","800g"],
-    ["3.0","SC OFF","300g","300g"]
+    ["0.0","800g","1kg","2.4kg"],["0.2","700g","1kg","2.4kg"],["0.4","700g","1kg","2.4kg"],
+    ["0.6","700g","1kg","2.4kg"],["0.8","700g","1kg","2.4kg"],["1.0","600g","900g","2.4kg"],
+    ["1.2","600g","800g","2.4kg"],["1.4","500g","800g","2.2kg"],["1.6","500g","800g","2.2kg"],
+    ["1.8","500g","800g","2.2kg"],["2.0","400g","500g","2.2kg"],["2.2","400g","500g","1.5kg"],
+    ["2.4","400g","500g","1.5kg"],["2.6","200g","400g","1.0kg"],["2.8","200g","400g","1.0kg"],
+    ["3.0","100g","400g","1.0kg"]
   ];
   const morn = [
     ["0.0","SC ON","SC ON"],["0.2","SC ON","SC ON"],["0.4","SC ON","SC ON"],["0.6","SC ON","SC ON"],
     ["0.8","SC ON","SC ON"],["1.0","SC ON","SC ON"],["1.2","SC ON","SC ON"],["1.4","SC ON","SC ON"],
-    ["1.6","SC ON","SC ON"],["1.8","SC ON","SC ON"],["2.0","SC ON +4h","SC ON"],["2.2","SC ON +4h","SC ON"],
-    ["2.4","SC OFF","SC OFF"],["2.6","SC OFF","SC OFF"],["2.8","SC OFF","SC OFF"],["3.0","SC OFF","SC OFF"]
+    ["1.6","SC ON","SC ON"],["1.8","SC ON","SC ON"],["2.0","SC ON","SC ON"],["2.2","SC ON","SC ON"],
+    ["2.4","SC OFF","SC ON"],["2.6","SC OFF","SC ON +4h"],["2.8","SC OFF","SC ON +4h"],["3.0","SC OFF","SC ON +4h"]
   ];
-  const ph = [["7.5","0.5kg"],["7.8","0.8kg"],["8.2","1.2kg"]];
+  const ph = [["7.5","0.5kg"],["7.8","1.0kg"],["8.2","1.5kg"]];
 
   function fmt(v){
     if(/^\d.*(kg|g)$/.test(v)) return `<span class="dose">${v}</span>`;
